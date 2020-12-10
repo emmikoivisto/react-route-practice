@@ -2,8 +2,8 @@ import React from "react";
 
 const Pricing = ({prices}) => {
 
-  const getPrices = prices.map( (price) => {
-    return <li>{price.level} - {price.cost}</li>
+  const getPrices = prices.map( (price, index) => {
+    return <li key={index}>{price.level} - £{price.cost}</li>
   })
 
   return (
