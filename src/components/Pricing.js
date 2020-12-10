@@ -11,7 +11,7 @@ const Pricing = ({prices}) => {
       <h4>Pricing</h4>
       <ul>
         {getPrices}
-        </ul>
+      </ul>
     </div>
   )
 

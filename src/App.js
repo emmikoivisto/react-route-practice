@@ -6,6 +6,7 @@ import Pricing from "./components/Pricing"
 import NavBar from "./components/NavBar"
 import Contact from "./components/Contact"
 import Shop from "./components/Shop"
+import Error from "./components/Error"
 
 const App = ()=> {
 
@@ -28,7 +29,8 @@ const App = ()=> {
       {/* pricing takes pricing data as props so dont need the compoennt argument and returns the full Pricing component*/}
       <Route path="/contact" component={Contact}/>
       <Route path="/shop" component={Shop}/>
-
+      {/* Url that doesnt exist */}
+      <Route component={Error}/>
      </>
    </Router>
   )
