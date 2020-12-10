@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom"; //destructuring the import so has BrowserRouter as Router and Route is different
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"; //destructuring the import so has BrowserRouter as Router and Route is different
 import Home from "./components/Home"
 import About from "./components/About"
 import Pricing from "./components/Pricing"
@@ -22,15 +22,17 @@ const App = ()=> {
      <>
       <NavBar />  {/*this shows on all the router */}
      {/* All done inside the browser, not a server request */}
-      <Route exact path="/" component={Home}/>  
-      <Route path="/about" component={About}/>
-      <Route path="/pricing" render={()=><Pricing prices={pricing}/>}/>
-      {/* render takes in a callback with the react component we want to return, then we pass in a prices prop with the value of pricing */}
-      {/* pricing takes pricing data as props so dont need the compoennt argument and returns the full Pricing component*/}
-      <Route path="/contact" component={Contact}/>
-      <Route path="/shop" component={Shop}/>
-      {/* Url that doesnt exist */}
-      <Route component={Error}/>
+      <Switch>
+        <Route exact path="/" component={Home}/>  
+        <Route path="/about" component={About}/>
+        <Route path="/pricing" render={()=><Pricing prices={pricing}/>}/>
+        {/* render takes in a callback with the react component we want to return, then we pass in a prices prop with the value of pricing */}
+        {/* pricing takes pricing data as props so dont need the compoennt argument and returns the full Pricing component*/}
+        <Route path="/contact" component={Contact}/>
+        <Route path="/shop" component={Shop}/>
+        {/* Url that doesnt exist, always shown unless given a constraint which is Switch */}
+        <Route component={Error}/>
+      </Switch>
      </>
    </Router>
   )
