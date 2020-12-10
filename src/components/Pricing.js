@@ -1,10 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 
-const Pricing = () => (
-  <div>
-    <h4>Pricing</h4>
-    <p>£££££££</p>
-  </div>
-);
+
+const Pricing = () => {
+  
+  return(
+    <div>
+      <h4>Pricing</h4>
+      <p>£££££££</p>
+    </div>
+    )
+};
 
 export default Pricing;
