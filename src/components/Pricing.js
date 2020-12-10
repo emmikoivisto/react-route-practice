@@ -1,13 +1,8 @@
-import React, {useState} from "react";
+import React from "react";
 
 const Pricing = () => {
 
-  const [pricing, setPricing] = useState([
-    {level: "Hobby", cost:0},
-    {level: "Start Up", cost:10},
-    {level: "Small business", cost:100},
-    {level: "Enterprice", cost:1000}
-  ]);
+
 
   return (
     <div>
