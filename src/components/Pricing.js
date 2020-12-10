@@ -1,13 +1,17 @@
 import React from "react";
 
-const Pricing = () => {
+const Pricing = ({prices}) => {
 
-
+  const getPrices = prices.map( (price) => {
+    return <li>{price.level} - {price.cost}</li>
+  })
 
   return (
     <div>
       <h4>Pricing</h4>
-      <p>£££££££</p>
+      <ul>
+        {getPrices}
+        </ul>
     </div>
   )
 
